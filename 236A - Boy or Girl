@@ -1,0 +1,39 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        string s;
+        getline(cin, s);
+        unordered_set<char> hset;
+     
+        ll cnt = 0;
+     
+        for (int i = 0; i < s.size(); i++)
+        {
+            if (hset.find(s[i]) == hset.end())
+            {
+                cnt++;
+            }
+            hset.insert(s[i]);
+        }
+     
+        if (cnt % 2 == 0)
+            cout << "CHAT WITH HER!" << nline;
+        else
+            cout << "IGNORE HIM!" << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
