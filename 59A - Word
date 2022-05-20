@@ -1,0 +1,42 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        string s;
+        cin >> s;
+        ll upper = 0, lower = 0;
+     
+        for (auto i : s)
+        {
+            if (i >= 65 && i <= 96)
+                upper++;
+            else
+                lower++;
+        }
+     
+        if (lower >= upper)
+        {
+            transform(s.begin(), s.end(), s.begin(), ::tolower);
+            cout << s << nline;
+        }
+        else
+        {
+            transform(s.begin(), s.end(), s.begin(), ::toupper);
+            cout << s << nline;
+        }
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
