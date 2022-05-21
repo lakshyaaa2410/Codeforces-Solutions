@@ -1,0 +1,32 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll n, k;
+        cin >> n >> k;
+     
+        while (k--)   
+        {
+            if (n % 10 != 0)
+                n--;
+            else 
+                n /= 10;
+        }
+     
+        cout << n << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
