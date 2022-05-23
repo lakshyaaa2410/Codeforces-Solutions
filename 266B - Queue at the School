@@ -1,0 +1,39 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        int n, t;
+        cin >> n >> t;
+        string s;
+        cin >> s;
+     
+        while (t > 0)
+        {
+            for (int i = 1; i < n ; i++)
+            {
+                if (s[i - 1] == 'B' && s[i] == 'G')
+                {
+                    swap(s[i], s[i - 1]);
+                    i++;
+                }
+            }
+            t--;
+        }
+     
+        cout << s << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
