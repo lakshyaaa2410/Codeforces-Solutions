@@ -1,0 +1,34 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        string s;
+        cin >> s;
+        bool isTrue = false;
+     
+        for (auto ch : s)
+            if ((ch >= 33 && ch <= 126) && (ch == 'H' || ch == 'Q' || ch == '9'))
+            {
+                isTrue = true;
+                break;
+            }
+     
+        if (isTrue)
+            cout << "YES\n";
+        else cout << "NO\n";
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
