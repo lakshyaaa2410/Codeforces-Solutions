@@ -1,0 +1,41 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll n;
+        string s;
+        cin >> n;
+        cin >> s;
+     
+        ll anton = 0, danik = 0;
+     
+        for (int i = 0; i < n; i++)
+        {
+            if (s[i] == 'A')
+                anton++;
+            else if (s[i] == 'D')
+                danik++;
+        }
+     
+        if (anton > danik)
+            cout << "Anton\n";
+        else if (anton < danik)
+            cout << "Danik\n";
+        else
+            cout << "Friendship\n";
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
