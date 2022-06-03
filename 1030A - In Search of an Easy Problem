@@ -1,0 +1,41 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll n;
+        cin >> n;
+     
+        bool isHard = false;
+     
+        for (int i = 0; i < n; i++)
+        {
+            int t;
+            cin >> t;
+     
+            if (t == 1)
+            {
+                isHard = true;
+                break;
+            }
+        }
+     
+        if (isHard)
+            cout << "Hard\n";
+        else
+            cout << "Easy\n";
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
