@@ -1,0 +1,29 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll a, b, c;
+        cin >> a >> b >> c;
+     
+        ll ans1 = a + b + c;
+        ll ans2 = a * b * c;
+        ll ans3 = (a + b) * c;
+        ll ans4 = a * (b + c);
+     
+        cout << max(max(ans4, ans3),max(ans2, ans1)) << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
