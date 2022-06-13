@@ -1,0 +1,48 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        string s;
+        cin >> s;
+        bool allCaps = true;
+     
+        for (int i = 1; i < s.size(); i++)
+        {
+            if (!isupper(s[i]))
+            {
+                allCaps = false;
+                break;
+            }
+        }
+     
+        if ((!isupper(s[0]) and allCaps))
+        {
+            s[0] = toupper(s[0]);
+            for (int i = 1; i < s.size(); i++)
+                s[i] = tolower(s[i]);
+            cout << s << nline;
+        }
+        else if (isupper(s[0]) and allCaps)
+        {
+            for (int i = 0; i < s.size(); i++)
+                s[i] = tolower(s[i]);
+            cout << s << nline;        
+        }
+        else
+            cout << s << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
