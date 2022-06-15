@@ -1,0 +1,35 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll n, m;
+        cin >> n >> m;
+     
+        ll arr[m];
+        for (int i = 0; i < m; i++)
+            cin >> arr[i];
+     
+        sort(arr, arr + m);
+     
+        ll best = INT_MAX;
+     
+        for (int i = 0; i <= m - n; i++)
+            best = min(best, arr[i + n - 1] - arr[i]);
+     
+        cout << best;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
