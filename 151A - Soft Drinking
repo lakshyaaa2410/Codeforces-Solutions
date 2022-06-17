@@ -1,0 +1,28 @@
+        #include <bits/stdc++.h>
+        #define ll long long int
+        #define nline '\n'
+        using namespace std;
+         
+        void solve()
+        {
+            ll n, k, l, c, d, p, nl, np;
+            cin >> n >> k >> l >> c >> d >> p >> nl >> np;
+         
+            ll possToast = (k * l) / nl;
+            ll limeAvai = (c * d);
+            ll saltAvai = (p / np);
+         
+            cout << min(possToast, min(limeAvai, saltAvai)) / n << nline;
+        }
+         
+        int main()
+        {
+            ios_base::sync_with_stdio(false);
+            cin.tie(NULL);
+            ll T = 1;
+            while (T--) 
+            {
+                solve();
+            }
+         
+        }
