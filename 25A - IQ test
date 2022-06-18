@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    unordered_map<int, int> even, odd;
+    for (int i = 0; i < n; i++)
+    {
+        ll elem;
+        cin >> elem;
+
+        if (elem & 1)
+        {
+            odd[i + 1] = elem;
+        }
+        else
+        {
+            even[i + 1] = elem;
+        }
+    }
+
+    if (even.size() == 1)
+    {
+        for (auto i : even)
+            cout << i.first << nline;
+    }
+    else if (odd.size() == 1)
+    {
+        for (auto i : odd)
+            cout << i.first << nline;
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
