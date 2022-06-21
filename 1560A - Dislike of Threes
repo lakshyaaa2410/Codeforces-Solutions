@@ -1,0 +1,31 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define endl '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        vector<ll> v;
+        ll k;
+        cin >> k;
+        for (int i = 1; i <= 2000; i++)
+        {
+            if (i % 3 != 0 && i % 10 != 3)
+            {
+                v.push_back(i);
+            }
+        }
+        cout << v[k - 1] << endl;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        cin >> T;
+        while (T--)
+        {
+            solve();
+        }
+    }
