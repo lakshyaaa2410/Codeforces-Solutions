@@ -1,0 +1,42 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll n;
+        cin >> n;
+        ll lOpen = 0, lClose = 0;
+        ll rOpen = 0, rClose = 0;
+     
+        for (int i = 0; i < n; i++)
+        {
+            int l, r;
+            cin >> l >> r;
+     
+            if (l == 1)
+                lOpen++;
+            else
+                lClose++;
+     
+            if (r == 1)
+                rOpen++;
+            else
+                rClose++;
+        }
+     
+        cout << min(rClose, rOpen) + min(lClose, lOpen) << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
