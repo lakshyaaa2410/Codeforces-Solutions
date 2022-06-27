@@ -1,0 +1,33 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll n, m;
+        cin >> n >> m;
+        ll extraSocks = 0;
+     
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % m == 0)
+            {
+                n++;
+            }
+        }
+        cout << n << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        // cin >> T;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
