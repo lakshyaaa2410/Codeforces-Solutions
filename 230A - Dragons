@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll s, n;
+    cin >> s >> n;
+
+    vector<pair<ll, ll>> drag;
+    for (int i = 0; i < n; i++)
+    {
+        ll x, y;
+        cin >> x >> y;
+        drag.push_back(make_pair(x, y));
+    }
+
+    sort(drag.begin(), drag.end());
+
+    for (int i = 0; i < n; i++)
+    {
+        if (s <= drag[i].first)
+        {
+            cout << "NO\n";
+            return;
+        }
+        else
+            s += drag[i].second;
+    }
+    cout << "YES\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    solve();
+}
