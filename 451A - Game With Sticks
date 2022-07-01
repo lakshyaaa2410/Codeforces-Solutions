@@ -1,0 +1,28 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll n, m;
+        cin >> n >> m;
+     
+        ll totalTurns = min(n, m);
+        if (totalTurns & 1)
+            cout << "Akshat\n";
+        else
+            cout << "Malvika\n";
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
