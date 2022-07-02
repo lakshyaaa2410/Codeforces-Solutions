@@ -1,0 +1,34 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll a, b;
+        cin >> a >> b;
+        ll usedAgain = 0, remain = 0;
+        ll candles = a;
+     
+        while (a >= b)
+        {
+            usedAgain = a / b;
+            candles += usedAgain;
+            remain = a % b;
+            a = usedAgain + remain;
+        }
+     
+        cout << candles << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
