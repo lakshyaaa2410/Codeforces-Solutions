@@ -1,0 +1,38 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        string s, ans;
+        cin >> s;
+     
+        for (auto ch : s)
+        {
+            if (ch != 'A' && ch != 'a' && ch != 'E' && ch != 'e' && ch != 'I' && ch != 'i' && ch != 'O' && ch != 'o' && ch != 'U' && ch != 'u' && ch != 'Y' && ch != 'y')
+            {
+                if (ch >= 65 && ch <= 90)
+                {
+                    ch = ch + 32;
+                }
+     
+                ans = ans + '.';
+                ans = ans + ch;
+            }
+        }
+     
+        cout << ans << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
