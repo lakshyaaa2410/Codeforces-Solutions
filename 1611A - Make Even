@@ -1,0 +1,49 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        string s;
+        cin >> s;
+     
+        ll n = s.size();
+     
+        ll res = -1;
+     
+        if ((s[n - 1] - '0') % 2 == 0)
+            res = 0;
+        else if ((s[0] - '0') % 2 == 0)
+            res = 1;
+        else 
+        {
+            bool hasEven = false;
+            for (auto i : s)
+            {
+                if ((i - '0') % 2 == 0)
+                {
+                    hasEven = true;
+                    break;
+                }
+            }
+     
+            if (hasEven)
+                res = 2;
+        }
+     
+        cout << res << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        cin >> T;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
