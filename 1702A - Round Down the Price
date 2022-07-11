@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+int countDigit(long long n) 
+{
+    return floor(log10(n) + 1);
+}
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll sizeOfN = countDigit(n);
+    ll powerOf10 = pow(10, sizeOfN - 1) + 10e-7;
+    cout << n - powerOf10 << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
