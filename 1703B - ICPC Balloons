@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+ 
+void solve()
+{
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+ 
+    unordered_set<char> hSet;
+    ll ans = 0;
+ 
+    for (auto ch : s)
+    {
+        if (hSet.find(ch) == hSet.end()) 
+            ans += 2;
+        else
+            ans++;
+        hSet.insert(ch);
+    }
+ 
+    cout << ans << nline;
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--)
+    {
+        solve();
+    }
+}
