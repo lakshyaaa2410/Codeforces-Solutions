@@ -1,0 +1,44 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll n, m;
+        cin >> n >> m;
+     
+        string s1(m, 'B'), s2(m, 'B');
+        string ans;
+        for (int i = 0; i < n; i++)
+        {
+            ll t;
+            cin >> t;
+     
+            s1[t - 1] = 'A';
+            s2[m + 1 -1 - t] = 'A';
+     
+            if (lexicographical_compare(s1.begin(), s1.end(), s2.begin(), s2.end()))
+            {
+                ans = s1;
+                s2 = s1;
+            }
+            else
+            {
+                ans = s2;
+                s1 = s2;
+            }
+        }
+        cout << ans << nline;
+    }
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        cin >> T;
+        while (T--)
+        {
+            solve();
+        }
+    }
