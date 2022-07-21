@@ -1,0 +1,40 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll n;
+        cin >> n;
+     
+        ll noOfBills = 0;
+     
+        noOfBills += (n / 100);
+        n %= 100;
+     
+        noOfBills += (n / 20);
+        n %= 20;
+     
+        noOfBills += (n / 10);
+        n %= 10;
+     
+        noOfBills += (n / 5);
+        n %= 5;
+     
+        noOfBills += n;
+     
+        cout << noOfBills << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
