@@ -1,0 +1,41 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        string s;
+        cin >> s;
+     
+        unordered_map<char, ll> hMap;
+        for (int i = 0; i < s.size(); i++)
+            hMap[s[i]]++;
+     
+        ll countOfDistinct = 0, countOfRepeated = 0;
+     
+        for (auto ch : hMap)
+        {
+            if (ch.second != 1)
+                countOfRepeated++;
+            else
+                countOfDistinct++;
+        }
+     
+        cout << countOfRepeated + (countOfDistinct) / 2 << nline;
+     
+     
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        cin >> T;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    } 
