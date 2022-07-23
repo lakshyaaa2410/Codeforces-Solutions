@@ -1,0 +1,48 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    void solve()
+    {
+        ll n;
+        cin >> n;
+     
+        ll posOfMin = INT_MAX, posOfMax = INT_MIN;
+     
+        ll min = INT_MAX, max = INT_MIN;
+        for (int i = 1; i <= n; i++)
+        {
+            ll t;
+            cin >> t;
+     
+            if (t > max)
+            {
+                max = t;
+                posOfMax = i;
+            }
+            if (t <= min)
+            {
+                min = t;
+                posOfMin = i;
+            }
+     
+        }
+     
+        if (posOfMin > posOfMax)
+            cout << posOfMax + (n - posOfMin) - 1 << nline;
+        else
+            cout << posOfMax + (n - posOfMin) - 2 << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
