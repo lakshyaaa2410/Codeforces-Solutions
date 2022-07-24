@@ -1,0 +1,54 @@
+    #include <bits/stdc++.h>
+    #define ll long long int
+    #define nline '\n'
+    using namespace std;
+     
+    ll frontLinearSearch(ll arr[], ll n, ll s)
+    {
+        ll res = 0;
+        for (int i = 0; i < n; i++)
+        {
+            res++;
+            if (arr[i] == s)
+                return res;
+        }
+    }
+     
+    void solve()
+    {
+        ll n;
+        cin >> n;
+     
+        ll arr[n + 1];
+     
+        for (int i = 1; i <= n; i++)
+        {
+            ll t;
+            cin >> t;
+            arr[t] = i;
+        }
+     
+        ll q;
+        cin >> q;
+        ll totalFront = 0, totalBack = 0;
+        while (q--)
+        {
+            ll s;
+            cin >> s;
+            totalFront += arr[s];
+            totalBack += (n - arr[s] + 1);
+        }
+        cout << totalFront << " " << totalBack << nline;
+    }
+     
+    int main()
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        ll T = 1;
+        while (T--) 
+        {
+            solve();
+        }
+     
+    }
