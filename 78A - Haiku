@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+int countVowels(string &s)
+{
+    int countOfVowels = 0;
+    for (auto ch : s)
+    {
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+            countOfVowels++;
+    }
+    return countOfVowels;
+}
+void solve()
+{
+    string s1, s2, s3;
+    getline(cin, s1);
+    getline(cin, s2);
+    getline(cin, s3);
+
+    ll c1 = countVowels(s1);
+    ll c2 = countVowels(s2);
+    ll c3 = countVowels(s3);
+ 
+    if (c1 == 5 && c2 == 7 && c3 == 5)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+ 
+}
