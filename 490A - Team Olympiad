@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll countOf1 = 0, countOf2 = 0, countOf3 = 0;
+    unordered_map<ll,ll> hMap;
+
+    for (int i = 1; i <= n; i++)
+    {
+        ll temp;
+        cin >> temp;
+
+        hMap[i] = temp;
+        if (temp == 1)
+            countOf1++;
+        else if (temp == 2)
+            countOf2++;
+        else
+            countOf3++;
+    }
+
+    ll possTeams = min({countOf1, countOf2, countOf3});
+    cout << possTeams << nline;
+    for (int i = 0; i < possTeams; i++)
+    {
+        for (auto elem : hMap)
+            if (elem.second == 1)
+            {
+                cout << elem.first << " ";
+                hMap.erase(elem.first);
+                break;
+            }
+        for (auto elem : hMap)
+            if (elem.second == 2)
+            {
+                cout << elem.first << " ";
+                hMap.erase(elem.first);
+                break;
+            }
+        for (auto elem : hMap)
+            if (elem.second == 3)
+            {
+                cout << elem.first << nline;
+                hMap.erase(elem.first);
+                break;
+            }
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
