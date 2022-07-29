@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, m;
+    cin >> n >> m;
+
+    ll primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47};
+
+    bool areConsecPrimes = false;
+
+    for (int i = 0; i < 15; i++)
+    {
+        if (primes[i] == n and primes[i + 1] == m)
+        {
+            areConsecPrimes = true;
+            break;
+        }
+    }
+
+    if (areConsecPrimes)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
