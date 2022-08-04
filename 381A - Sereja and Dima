@@ -45,7 +45,6 @@
                     dimaSum += arr[high];
                     high--;
                 }
-     
                 isSerejaTurn = true;
             }
         }
