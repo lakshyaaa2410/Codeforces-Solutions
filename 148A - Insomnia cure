@@ -22,7 +22,7 @@
             cout << d - count << nline;
         }
      
-    }
+    } 
      
     int main()
     {
