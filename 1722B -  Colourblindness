@@ -7,7 +7,6 @@ void solve()
 {
     ll n;
     cin >> n;
- 
     string r1, r2;
     cin >> r1 >> r2;
  
