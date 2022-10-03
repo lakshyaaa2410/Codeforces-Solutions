@@ -7,7 +7,6 @@ void solve()
 {
     ll w;
     cin >> w;
- 
     w % 2 == 0 && w > 2 ? cout << "YES\n" : cout << "NO\n";
     
 }
