@@ -15,6 +15,7 @@
     {
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
+        
         ll T = 1;
         while (T--) 
         {
