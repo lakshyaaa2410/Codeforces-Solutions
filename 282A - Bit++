@@ -1,80 +1,29 @@
+include<bits / stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
 
+int solve()
+{
+    string s;
+    cin >> s;
 
-Codeforces
-| In English По-русски
-Lakshyaaa2410 | Logout
+    if (s == "++X" || s == "X++")
+        return 1;
+    else
+        return -1;
+}
 
- 
- 
- 
- 
-
-    Home
-    Top
-    Catalog
-    Contests
-    Gym
-    Problemset
-    Groups
-    Rating
-    Edu
-    API
-    Calendar
-    Help
-
-
-
-    Problems
-    Submit Code
-    My Submissions
-    Status
-    Hacks
-    Room
-    Standings
-    Custom Invocation
-
- 
- 
- 
- 
-General
- 
- 
-# 	Author 	Problem 	Lang 	Verdict 	Time 	Memory 	Sent 	Judged 	  	 
-155385843 	Practice:
-Lakshyaaa2410 	282A - 21 	GNU C++14 	Accepted 	15 ms 	4 KB 	2022-04-30 14:42:40 	2022-04-30 14:42:40 	Add to favourites 	
- 
- 
-→ Source
-Copy
-
-        #include <bits/stdc++.h>
-        #define ll long long int
-        #define nline '\n'
-        using namespace std;
-         
-        int solve()
-        {
-            string s;
-            cin >> s;
-         
-            if (s == "++X" || s == "X++")   
-                return 1;
-            else
-                return -1;
-        }
-         
-        int main()
-        {
-            ios_base::sync_with_stdio(false);
-            cin.tie(NULL);
-            ll T = 1;
-            cin >> T;
-            ll Ans = 0;
-            while (T--) 
-            {
-                Ans += solve();
-            }
-            cout << Ans << nline;
-        }
-
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    ll Ans = 0;
+    while (T--)
+    {
+        Ans += solve();
+    }
+    cout << Ans << nline;
+}
