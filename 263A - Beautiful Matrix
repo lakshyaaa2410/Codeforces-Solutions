@@ -19,8 +19,7 @@
                     break;
                 }
             }
-        }
-     
+        }     
         cout << abs(3 - posOf1.first) + abs(3 - posOf1.second) << nline;
     }
      
