@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+int compare(string s)
+{
+    if (s == "M")
+        return 0;
+
+    ll countOfX = 1;
+    for (auto ch : s)
+    {
+        if (ch == 'X')
+            countOfX++;
+    }
+    if (s[s.size() - 1] == 'S')
+        countOfX *= -1;
+    return countOfX;
+
+}
+
+void solve()
+{
+    string a, b;
+    cin >> a >> b;
+
+    if (a == b)
+        cout << "=\n";
+    else if (compare(a) < compare(b))
+        cout << "<\n";
+    else 
+        cout << ">\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
