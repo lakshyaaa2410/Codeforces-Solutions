@@ -7,7 +7,6 @@
     {
         string s;
         getline(cin, s);
-     
         int count = 0, i = 0;
         bool flag = false;
         if (s.size() < 7)
