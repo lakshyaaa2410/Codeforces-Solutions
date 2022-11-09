@@ -26,4 +26,5 @@
             sum += solve();
         }
         cout << sum << nline;
+        
     }
