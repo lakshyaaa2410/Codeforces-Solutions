@@ -21,7 +21,6 @@
                 ans = ans + ch;
             }
         }
-     
         cout << ans << nline;
     }
      
