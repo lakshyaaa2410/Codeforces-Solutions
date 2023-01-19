@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll countOfEven = 0, countOfOdd = 0;
+
+    for (int i = 0; i < 2 * n; i++)
+    {
+        ll x;
+        cin >> x;
+
+        if (x & 1)
+            countOfOdd++;
+        else 
+            countOfEven++;
+    }
+
+    if (countOfEven == countOfOdd)
+        cout << "Yes\n";
+    else
+        cout << "No\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
