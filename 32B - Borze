@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    string s;
+    cin >> s;
+
+    for (int i = 0; i < s.size(); )
+    {
+        if (s[i] == '.')
+        {
+            cout << 0;
+            i++;
+        }
+        else if (s[i] == '-' and s[i + 1] == '.')
+        {
+            cout << 1;
+            i += 2;
+        }
+        else if (s[i] == '-' and s[i + 1] == '-')
+        {
+            cout << 2;
+            i += 2;
+        }
+    }   
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
