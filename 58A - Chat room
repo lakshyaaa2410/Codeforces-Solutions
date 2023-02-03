@@ -1,43 +1,38 @@
-    #include <bits/stdc++.h>
-    #define ll long long int
-    #define nline '\n'
-    using namespace std;
-     
-    void solve()
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    string s;
+    cin >> s;
+
+    string h = "hello";
+
+    ll i = 0, j = 0;
+
+    while (i < s.size() and j < h.size())
     {
-        string s, patt = "hello";
-        cin >> s;
-     
-        bool flag = false;
-        int j = 0;
-        for (int i = 0; i < s.size(); i++)
-        {
-            if (s[i] == patt[j])
-            {
-                j++;
-                if (j == patt.size())
-                {
-                    flag = true;
-                    break;
-                }
-            }
-        }
-     
-        if (flag)
-            cout << "YES" << nline;
-        else
-            cout << "NO" << nline;
-     
+        if (s[i] == h[j])
+            j++;
+        i++;
     }
-     
-    int main()
+
+    if (j == h.size())
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
     {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
-        ll T = 1;
-        while (T--) 
-        {
-            solve();
-        }
-     
+        solve();
     }
+
+}
