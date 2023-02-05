@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    pair<ll, ll> init = {0, 0};
+
+    ll n;
+    cin >> n;
+
+    string s;
+    cin >> s;
+    bool a = false;
+    for (auto ch : s)
+    {
+        if (ch == 'U')
+            init.second++;
+        if (ch == 'D')
+            init.second--;
+        if (ch == 'R')
+            init.first++;
+        if (ch == 'L')
+            init.first--;
+
+        if (init.first == 1 and init.second == 1)
+        {
+            a = true;
+            break;
+        }
+    }
+
+    if (a)
+        cout << "Yes\n";
+    else
+        cout << "No\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--)
+    {
+        solve();
+    }
+}
