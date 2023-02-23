@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll k, n;
+    cin >> k >> n;
+
+    ll diff = 1, currEle = 1;
+
+    for (int i = 1; i <= k; i++)
+    {
+        cout << currEle << " ";
+        if (n - (currEle + diff) >= (k - i - 1))
+        {
+            currEle += diff;
+            diff++;
+        }
+        else
+            currEle++;
+    }
+
+    cout << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
