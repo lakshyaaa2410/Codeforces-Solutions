@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll sumOfPos = 0, sumOfNeg = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        ll t;
+        cin >> t;
+
+        if (t > 0)
+            sumOfPos += t;
+        else 
+            sumOfNeg += t;
+    }
+
+    cout << abs(abs(sumOfNeg) - sumOfPos) << nline;
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--)
+    {
+        solve();
+    }
+}
