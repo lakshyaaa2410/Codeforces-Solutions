@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, s, r;
+    cin >> n >> s >> r;
+
+    ll currVal = s - r;
+    cout << currVal << " ";
+
+    for (int i = 2; i <= n; i++)
+    {
+        while (r - currVal < n - i)
+            currVal--;
+        cout << currVal << " ";
+        r -= currVal;
+    }
+    cout << nline;
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
