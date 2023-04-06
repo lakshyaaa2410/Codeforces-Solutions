@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, k;
+    cin >> n >> k;
+
+    if (!(n & 1))
+        cout << "YES\n";
+    else if (n % k == 0)
+        cout << "YES\n";
+    else if ((n - k) % 2 == 0)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
