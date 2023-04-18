@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    string guest, resi;
+    cin >> guest >> resi;
+
+    string pile;
+    cin >> pile;
+
+    map<char, ll> hMap;
+
+    for (auto ch : pile)
+        hMap[ch]++;
+
+    bool isPoss = true;
+    for (int i = 0; i < guest.size(); i++)
+    {
+        if (hMap.find(guest[i]) != hMap.end())
+            hMap[guest[i]]--;
+        else
+            isPoss = false;
+    }
+
+    for (int i = 0; i < resi.size(); i++)
+    {
+        if (hMap.find(resi[i]) != hMap.end())
+            hMap[resi[i]]--;
+        else
+            isPoss = false;
+    }
+
+    for (auto itr : hMap)
+    {
+        if (itr.second != 0)
+            isPoss = false;
+    }
+
+    if (isPoss)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
