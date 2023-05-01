@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+ 
+void solve()
+{
+    ll n;
+    cin >> n;
+ 
+    if (n % 3 == 0)
+    {
+        ll rem = n / 3;
+        cout << rem << " " << rem + 1 << " " << rem - 1 << nline;
+    }
+    else if (n % 3 == 1)
+    {
+        ll rem = n / 3;
+        cout << rem << " " << rem + 2 << " " << rem - 1 << nline;
+    }
+    else
+    {
+        ll rem = n / 3;
+        cout << rem + 1 << " " << rem + 2 << " " << rem - 1 << nline;
+    }
+}
+ 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+ 
