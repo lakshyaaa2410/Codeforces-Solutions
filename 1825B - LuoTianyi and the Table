@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, m;
+    cin >> n >> m;
+
+    ll arr[n * m];
+    for (int i = 0; i < n * m; i++)
+        cin >> arr[i];
+
+    sort(arr, arr + (n * m));
+
+    ll fMax = arr[(n * m) - 1];
+    ll sMax = arr[(n * m) - 2];
+
+    ll fMin = arr[0];
+    ll sMin = arr[1];
+
+
+    ll ansWithMax = 0, ansWithMin = 0;
+
+    if (n > m)
+    {
+        ansWithMax = (fMax - fMin) * (n - 1) * m;
+        ansWithMax += (fMax - sMin) * (m - 1);
+
+        ansWithMin = (fMax - fMin) * (n - 1) * m;
+        ansWithMin += (sMax - fMin) * (m - 1);
+    }
+    else
+    {
+        ansWithMax = (fMax - fMin) * (m - 1) * n;
+        ansWithMax += (fMax - sMin) * (n - 1);
+
+        ansWithMin = (fMax - fMin) * (m - 1) * n;
+        ansWithMin += (sMax - fMin) * (n - 1);
+    }
+
+    cout << max(ansWithMax, ansWithMin) << nline;
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
