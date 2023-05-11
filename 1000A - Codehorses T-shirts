@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    vector<string> curr(n), prev(n);
+    map<string, ll> setA, setB;
+
+    for (int i = 0; i < n; i++) {
+        cin >> curr[i];
+        setA[curr[i]]++;
+    }
+
+    for (int i = 0; i < n; i++) {
+        cin >> prev[i];
+        setB[prev[i]]++;
+    }
+
+
+    ll count = n;
+
+    for (auto itr : setA)
+    {
+        count -= min(itr.second, setB[itr.first]);
+    }
+
+    cout << count << nline;
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+}
