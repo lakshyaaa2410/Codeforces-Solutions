@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void Lakshya()
+{
+    ll n;
+    cin >> n;
+
+    if (n % 2 ==  1)
+    {
+        for (ll i = 1; i <= n; i++)
+            cout << i << " ";
+        cout << nline;
+    }
+    else
+    {
+        for (ll i = 1; i <= n; i++)
+            cout << 2 * i << " ";
+        cout << nline;
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll TC = 1;
+    cin >> TC;
+    while (TC--) 
+    {
+        Lakshya();
+    }
+
+}
