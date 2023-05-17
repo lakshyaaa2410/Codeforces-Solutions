@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+	ll n;
+	cin >> n;
+
+	ll faces = 0;
+	for (int i = 0; i < n; i++)   
+	{
+		string s;
+		cin >> s;
+
+		if (s == "Icosahedron")
+			faces += 20;
+		else if (s == "Dodecahedron")
+			faces += 12;
+		else if (s == "Octahedron")
+			faces += 8;
+		else if (s == "Cube")
+			faces += 6;
+		else if (s == "Tetrahedron")
+			faces += 4;
+	}
+
+	cout << faces << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
