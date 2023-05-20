@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll arr[n];
+    for (int i = 0; i < n; i++)
+    	cin >> arr[i];
+
+    ll count[3] = {0};
+
+    for (int i = 0; i < n; i++)
+    {
+    	if (i % 3 == 0)
+    		count[0] += arr[i];
+    	else if (i % 3 == 1)
+    		count[1] += arr[i];
+    	else
+    		count[2] += arr[i];
+    }
+
+    if (count[0] > count[1] and count[0] > count[2])
+    	cout << "chest\n";
+    else if (count[1] > count[0] and count[1] > count[2])
+    	cout << "biceps\n";
+    else
+    	cout << "back\n";
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
