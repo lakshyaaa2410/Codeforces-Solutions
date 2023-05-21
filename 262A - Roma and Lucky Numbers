@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+ll countLucky(ll n)
+{
+	ll ans = 0;
+	while (n)
+	{
+		ll lastDig = n % 10;
+		if (lastDig == 4 or lastDig == 7)
+			ans++;
+
+		n /= 10;
+	}
+
+	return ans;
+}
+void solve()
+{
+    ll n, k;
+    cin >> n >> k;
+
+    ll arr[n];
+    for (int i = 0; i < n; i++)
+    	cin >> arr[i];
+
+    ll countOfMinK = 0;
+    for (int i = 0; i < n; i++)
+    {
+    	if (countLucky(arr[i]) <= k)
+    		countOfMinK++;
+    }
+
+    cout << countOfMinK << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
