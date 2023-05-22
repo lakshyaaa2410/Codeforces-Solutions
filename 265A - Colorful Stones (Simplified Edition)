@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+   string s, t;
+   cin >> s >> t;
+
+   ll n = s.size(), m = t.size();
+   ll count = 0;
+
+   ll i = 0, j = 0;
+
+	while (i < n and j < m)
+	{
+		if (s[i] == t[j])
+		{
+			count++;
+			i++;
+		}
+		j++;	
+	}
+
+	cout << count + 1 << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    // cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
