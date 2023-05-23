@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, k;
+    cin >> n >> k;
+    bool hasK = false;
+
+    for (int i = 0; i <= n; i++)
+    {
+    	ll countOf1 = i, countOfRest = (n - i);
+
+    	ll posOf1 = (countOf1 * (countOf1 - 1)) / 2;
+    	ll posOfRest = (countOfRest * (countOfRest - 1)) / 2;
+
+    	if (posOf1 + posOfRest == k)
+    	{
+    		hasK = true;
+    		cout << "YES\n";
+    		for (int j = 0; j < countOf1; j++)
+    			cout << 1 << " ";
+    		for (int j = 0; j < countOfRest; j++)
+    			cout << -1 << " ";
+    		cout << nline;
+    		break;
+    	}
+    }
+
+    if (!hasK)
+    	cout << "NO\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}	
