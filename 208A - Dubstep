@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    string s;
+    cin >> s;
+
+    bool flag = true;
+
+    for (int i = 0; i < s.size(); i++)
+    {
+    	if (s[i] == 'W' and s[i + 1] == 'U' and s[i + 2] == 'B')
+    	{
+    		i += 2;
+    		if (flag == false)
+    			cout << " ";
+
+    		continue;
+    	}
+    	else
+    	{
+    		flag = false;
+    		cout << s[i];
+    	}
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
