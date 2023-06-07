@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    string s;
+    cin >> s;
+
+    ll ans = 1;
+
+    if (s[0] == '0')   
+        ans = 0;
+    if (s[0] == '?')
+        ans = 9;
+
+    for (int i = 1; i < s.size(); i++)
+    {
+        if (s[i] == '?')
+            ans *= 10;
+    }
+
+    cout << ans << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
