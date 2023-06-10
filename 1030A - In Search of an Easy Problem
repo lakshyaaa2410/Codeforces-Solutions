@@ -6,8 +6,7 @@
     void solve()
     {
         ll n;
-        cin >> n;
-     
+        cin >> n;     
         bool isHard = false;
      
         for (int i = 0; i < n; i++)
