@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    string s;
+    cin >> s;
+
+    ll sumA = 0, sumB = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        sumA += s[i] - '0';
+        sumB += s[i + 3] - '0';
+    }
+
+    if (sumA == sumB)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
