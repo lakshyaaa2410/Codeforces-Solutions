@@ -10,15 +10,19 @@
      
         if ((b - a) == (c - b))
             cout << "YES" << nline;
+
         // Checking For A
         else if ((2 * b - c) % a == 0 && (2 * b - c) > 0)
             cout << "YES" << nline;
+
         // Checking For B
         else if ((a + c) % (2 * b) == 0)
             cout << "YES" << nline;
+
         // Checking For C
         else if ((2 * b - a) % c == 0 && (2 * b - a) > 0)
             cout << "YES" << nline;
+
         else
             cout << "NO" << nline;
     }
