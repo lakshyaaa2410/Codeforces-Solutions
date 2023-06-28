@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, t;
+    cin >> n >> t;
+
+    ll count = 0;
+    ll timeRem = 240 - t;
+
+    ll totalTime = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        totalTime += (5 * i);
+        if (totalTime <= timeRem)
+            count++;
+    }
+
+    if (count > n)
+        cout << n << nline;
+    else
+        cout << count << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
