@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+ll primes[1000000] = {0};
+void calculatePrimes()
+{
+    primes[0] = primes[1] = 1;
+    for (ll i = 2; i < 1000000; i++)
+    {
+        if (primes[i] == 0)
+        {
+            for (ll j = i * i; j < 1000000; j += i)
+            {
+                primes[j] = 1;
+            }
+        }
+    }
+}
+bool isPerfectSquare(ll n)
+{
+    double sqrtN = sqrt(n);
+    if (sqrtN == int(sqrtN))
+        return true;
+    else
+        return false;
+}
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    if (n == 4)
+        cout << "YES\n";
+    else if (n % 2 == 0)
+        cout << "NO\n";
+    else if (isPerfectSquare(n) and !primes[int(sqrt(n))])
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    ll T = 1;
+    cin >> T;
+    calculatePrimes();
+    while (T--) 
+    {
+        solve();
+    }
+}
