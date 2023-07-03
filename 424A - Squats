@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    string s;
+    cin >> s;
+
+    ll count = 0;
+    for (auto &ch : s) {
+        if (ch == 'X')
+            count++;
+    }
+
+    if (count == n / 2)
+    {
+        cout << 0 << nline;
+        cout << s << nline;
+        return;
+    }
+
+    if (count < (n / 2)) {
+        count = (n / 2) - count;
+        cout << count << nline;
+
+        for (int i = 0; i < n and count > 0; i++)
+        {
+            if (s[i] == 'x') {
+                s[i] = 'X';
+                count--;
+            }
+        }
+        cout << s << nline;
+    }
+    else {
+        count = count - (n / 2);
+        cout << count << nline;
+
+        for (int i = 0; i < n and count > 0; i++) {
+            if (s[i] == 'X') {
+                s[i] = 'x';
+                count--;
+            }
+        }
+        cout << s << nline;
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
