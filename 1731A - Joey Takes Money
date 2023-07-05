@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll res = 1;
+    for (ll i = 0; i < n; i++)
+    {
+        ll x;
+        cin >> x;
+
+        res *= x;
+    }
+
+    res += (n - 1);
+    cout << 2022 * res << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
