@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    vector<ll> count(n + 1);
+    for (int i = 0; i < n; i++)
+    {
+        ll temp;
+        cin >> temp;
+
+        if (temp < n)
+            count[temp]++;
+        else
+            count[n] = 1e6;
+    }
+
+    bool flag = true;
+    for (int i = 1; i <= n; i++) {
+        if (count[i] > count[i - 1])
+        {
+            flag = false;
+            break;
+        }
+    }
+
+    if (flag)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
