@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, m, k;
+    cin >> n >> m >> k;
+
+    ll x, y;
+    cin >> x >> y;
+
+    string ans = "YES";
+    for (int i = 0; i < k; i++)
+    {
+        ll a, b;
+        cin >> a >> b;
+
+        if ((x + y) % 2 == (a + b) % 2)
+        {
+            ans = "NO";
+        }
+    }
+
+    cout << ans << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
