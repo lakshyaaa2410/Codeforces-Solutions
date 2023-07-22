@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    vector<ll> arr(n);
+    map<ll, ll> hMap;
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+        hMap[arr[i]]++;
+    }
+
+    vector<ll> points(n + 1);
+
+    for (auto itr : hMap)
+    {
+        for (int i = itr.first; i < n + 1; i += itr.first)
+        {
+            points[i] += itr.second;
+        }
+    }
+
+    ll ans = *max_element(points.begin(), points.end());
+    cout << ans << nline;
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
