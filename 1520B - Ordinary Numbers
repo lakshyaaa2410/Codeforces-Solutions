@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll ans = 0;
+
+    for (ll power = 1; power <= n; power = power * 10 + 1)    
+        for (ll d = 1; d <= 9; d++)
+            if (power * d <= n)
+                ans++;
+
+    cout << ans << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
