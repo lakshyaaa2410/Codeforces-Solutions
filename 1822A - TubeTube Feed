@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, k;
+    cin >> n >> k;
+
+    ll arr[n], brr[n];
+
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    for (int i = 0; i < n; i++)
+        cin >> brr[i];
+
+    ll best = -2;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (i + arr[i] <= k and (best == -2 or brr[best] < brr[i]))
+            best = i;
+    }
+
+    cout << best + 1 << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
