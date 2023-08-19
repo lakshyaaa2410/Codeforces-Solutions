@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    string s;
+    cin >> s;
+
+    ll countOfZ = 0, countOfN = 0;
+    for (auto ch : s)
+    {
+        if (ch == 'z')
+            countOfZ++;
+        if (ch == 'n')
+            countOfN++;
+    }
+
+    for (int i = 0; i < countOfN; i++)
+        cout << 1 << " ";
+    for (int i = 0; i < countOfZ; i++)
+        cout << 0 << " ";
+    cout << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
