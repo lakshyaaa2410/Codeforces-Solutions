@@ -19,7 +19,7 @@
      
             capacity = max(capacity, inTheTrain);
         }
-        cout << capacity << nline;
+            cout << capacity << nline;
     }
      
     int main()
