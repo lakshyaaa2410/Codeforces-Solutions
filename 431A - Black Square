@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll a, b, c, d;
+    cin >> a >> b >> c >> d;
+
+    string s;
+    cin >> s;
+
+    ll totalCal = 0;
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] == '1')
+            totalCal += a;
+        else if (s[i] == '2')
+            totalCal += b;
+        else if (s[i] == '3')
+            totalCal += c;
+        else
+            totalCal += d;
+    }
+
+    cout << totalCal << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+}
