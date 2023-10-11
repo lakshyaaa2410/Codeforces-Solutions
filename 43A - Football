@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    unordered_map<string, ll> hMap;
+
+    for (int i = 0; i < n; i++)
+    {
+        string t;
+        cin >> t;
+        hMap[t]++;
+    }
+
+    ll a = 0;
+    string ans = "";
+
+    for (auto itr : hMap)
+    {
+        if (itr.second > a) {
+            ans = itr.first;
+            a = itr.second;
+        }
+    }
+
+    cout << ans << nline;
+    
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
