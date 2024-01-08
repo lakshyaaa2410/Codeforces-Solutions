@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, k;
+    cin >> n >> k;
+
+    ll arr[n];
+    ll prod = 1;
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        prod *= arr[i];
+    }
+
+    if (2023 % prod == 0)
+    {
+        cout << "Yes\n";
+        cout << (2023 / prod) << " ";
+
+        for (int i = 0; i < k - 1; i++)
+            cout << 1 << " ";
+        cout << nline;
+    }
+    else
+    {
+        cout << "No\n";
+    }
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--)
+    {
+        solve();
+    }
+}
