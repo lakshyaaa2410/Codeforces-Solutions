@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll count1 = 0, count2 = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        ll temp;
+        cin >> temp;
+
+        if (temp == 1)
+            count1++;
+        else
+            count2++;
+    }
+
+    if ((count1 + 2 * count2) % 2 != 0)
+        cout << "No\n";
+    else
+    {
+        ll sum = (count1 + 2 * count2) / 2;
+
+        if (sum % 2 == 0 || (sum % 2 == 1 and count1 != 0))
+            cout << "Yes\n";
+        else
+            cout << "No\n";
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
