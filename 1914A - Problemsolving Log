@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+
+    int count = 0;
+    for (int i = 0; i < 26; ++i) {
+        char c = 'A' + i;
+        int char_count = 0;
+        for (char ch : s) {
+            if (ch == c) {
+                char_count++;
+                if (char_count >= i + 1) {
+                    count++;
+                    break;
+                }
+            }
+        }
+    }
+    cout << count << endl;
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
