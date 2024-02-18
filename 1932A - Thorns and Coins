@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    string s;
+    cin >> s;
+
+    ll ans = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (s[i] == '.' and s[i + 1] == '*' and s[i + 2] == '*')
+            break;
+        if (s[i] == '@')
+        {
+            ans++;
+            if (s[i + 1] == '*' and s[i + 2] == '*')
+                break;
+        }
+    }
+
+    cout << ans << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
