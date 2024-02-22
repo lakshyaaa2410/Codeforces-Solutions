@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    string s;
+    ll p;
+
+    cin >> s >> p;
+
+    string temp = s;
+    sort(temp.rbegin(), temp.rend());
+
+    ll totalSum = 0;
+
+    for (int i = 0; i < temp.size(); i++)
+        totalSum += (temp[i] - 96);
+
+    unordered_map<char, ll> hMap;
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (totalSum > p) 
+        {
+            hMap[temp[i]]++;
+            totalSum -= (temp[i] - 96);
+        }
+    }
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (hMap[s[i]] > 0) 
+        {
+            hMap[s[i]]--;
+        }
+        else
+            cout << s[i];
+    }
+
+    cout << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
