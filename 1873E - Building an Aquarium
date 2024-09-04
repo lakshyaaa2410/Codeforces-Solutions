@@ -1,0 +1,67 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define nline endl
+
+bool isValidHeight(ll arr[], ll n, ll height, ll maxWater)
+{
+    ll currWaterHold = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] < height)
+        {
+            currWaterHold += (height - arr[i]);
+        }
+    }
+
+    if (currWaterHold > maxWater)
+        return false;
+    return true;
+
+}
+void solve()
+{
+    ll n, x;
+    cin >> n >> x;
+
+    ll arr[n];
+    ll low = 1, high = INT_MAX;
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    ll bestHeight = -1;
+
+    while (low <= high)
+    {
+        ll mid = low + (high - low) / 2;
+
+        if (isValidHeight(arr, n, mid, x))
+        {
+            bestHeight = mid;
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+
+    cout << bestHeight << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll t = 1;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+}
