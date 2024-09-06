@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define nline endl
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll maxEven = n & 1? n - 1 : n;
+    ll minOdd = 1;
+    for (int i = 0; i < n; i++)
+    {
+        if (i & 1) 
+        {
+            if (minOdd == 0)
+                cout << maxEven << " ";
+            else
+                cout << minOdd << " ";
+            minOdd += 2;
+        }
+        else
+        {
+            if (maxEven == 0)
+                cout << minOdd << " ";
+            else
+                cout << maxEven << " ";
+            maxEven -= 2;
+        }
+    }
+
+    cout << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll t = 1;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+}
