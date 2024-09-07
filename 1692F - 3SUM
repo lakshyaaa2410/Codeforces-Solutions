@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define nline endl
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll count[10] = {0};
+
+    for (int i = 0; i < n; i++) {
+        ll temp;
+        cin >> temp;
+
+        count[temp % 10]++;
+    }
+
+    vector<ll> newArr;
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j < min(count[i], 3ll); j++)
+            newArr.emplace_back(i);
+    }
+
+    ll N = newArr.size();
+
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = i + 1; j < N; j++)
+        {
+            for (int k = j + 1; k < N; k++)
+            {
+                ll sum = newArr[i] + newArr[j] + newArr[k];
+
+                if (sum % 10 == 3)
+                {
+                    cout << "YES\n";
+                    return;
+                }
+            }
+        }
+    }
+
+    cout << "NO\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll t = 1;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+}
