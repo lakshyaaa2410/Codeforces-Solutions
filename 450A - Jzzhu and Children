@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define nline endl
+
+void solve()
+{
+    ll n, m;
+    cin >> n >> m;
+
+    queue<pair<ll, ll>> q;
+
+    for (int i = 0; i < n; i++)
+    {
+        ll temp;
+        cin >> temp;
+
+        q.push({temp, i + 1});
+    }
+
+    ll lastMan = 0;
+    while (!q.empty())
+    {
+        ll currEle = q.front().first;
+        ll currInd = q.front().second;
+
+        lastMan = currInd;
+        q.pop();
+
+        if (currEle > m)
+        {
+            currEle -= m;
+            q.push({currEle, currInd});
+        }
+    }
+
+    cout << lastMan << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll t = 1;
+    while (t--)
+    {
+        solve();
+    }
+}
