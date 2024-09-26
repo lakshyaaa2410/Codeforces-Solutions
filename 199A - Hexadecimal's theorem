@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define nline endl
+
+void solve()
+{
+    ll n;
+    cin >> n;
+    cout << 0 << " " << 0 << " " << n << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll t = 1;
+    while (t--)
+    {
+        solve();
+    }
+}
