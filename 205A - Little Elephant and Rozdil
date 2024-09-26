@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define nline endl
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    ll arr[n];
+    pair<ll, ll> dis(INT_MAX, 0);
+    unordered_map<ll, ll> hMap;
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        
+        if (arr[i] < dis.first)
+        {
+            dis.first = arr[i];
+            dis.second = i + 1;
+        }
+        hMap[arr[i]]++;
+    }
+
+    if (hMap[dis.first] != 1)
+        cout << "Still Rozdil\n";
+    else
+        cout << dis.second << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll t = 1;
+    while (t--)
+    {
+        solve();
+    }
+}
