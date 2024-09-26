@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define nline endl
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    queue<pair<ll, ll>> q;
+
+    for (int i = 1; i <= 7; i++)
+    {
+        ll day;
+        cin >> day;
+
+        q.push({day, i});
+    }
+    
+    ll count = 0, lastDay = -1;
+    while (!q.empty())
+    {
+        ll currPage = q.front().first;
+        ll currDay = q.front().second;
+
+        q.pop();
+
+        count += currPage;
+        if (count >= n)
+        {
+            lastDay = currDay;
+            break;
+        }
+        q.push({currPage, currDay});
+    }
+
+    cout << lastDay << nline;
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll t = 1;
+    while (t--)
+    {
+        solve();
+    }
+}
